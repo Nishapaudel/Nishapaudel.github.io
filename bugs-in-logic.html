@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugs in Logic - Blog Post by Nisha Paudel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-slate-900">
+
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <main class="container mx-auto px-6 py-12">
+        <article class="max-w-3xl mx-auto bg-white p-6 shadow-lg rounded-lg">
+            <h1 class="text-4xl font-bold text-teal-600">Bugs in Logic</h1>
+            <p class="text-sm text-gray-500 mt-2">Published on March 18, 2024 | By Nisha Paudel</p>
+            <img src="/img/debug.png" alt="Debugging Code" class="w-full my-6 rounded-lg shadow-md">
+
+            <p class="text-lg text-gray-800 leading-relaxed">
+                Six years ago, when I first started learning programming, debugging my code felt like solving a crime scene investigation. 
+                I’d stare at my screen for hours trying to find out why my script wasn’t working.
+            </p>
+
+            <p class="text-lg text-gray-800 leading-relaxed mt-4">
+                Fast forward to today, and AI tools can help new programmers detect syntax and semantic errors in seconds. Sounds great, right? 
+                Well, here’s the catch—AI is still clueless when it comes to logical errors.
+            </p>
+
+            <p class="text-lg text-gray-800 leading-relaxed mt-4">
+                You see, AI doesn’t think like a human (yet). It can analyze patterns and syntax, but it doesn’t truly understand what the code is supposed to do.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-teal-600 mt-6">Types of Errors</h2>
+
+            <h3 class="text-xl font-semibold text-gray-700 mt-4">Syntax Errors: The Grammar Police</h3>
+            <p class="text-lg text-gray-800 leading-relaxed mt-2">
+                Syntax errors happen when you break the language’s grammatical rules. Computers are like strict English teachers—they won’t tolerate a single missing comma or bracket.
+            </p>
+
+            <pre class="bg-gray-900 text-white p-4 rounded-md mt-4"><code>print "Hello, world!"  # SyntaxError: Missing parentheses in call to 'print'</code></pre>
+
+            <h3 class="text-xl font-semibold text-gray-700 mt-6">Semantic Errors: When Code Makes Sense but Doesn’t</h3>
+            <pre class="bg-gray-900 text-white p-4 rounded-md mt-4"><code>y = banana + 5  # TypeError: can only concatenate str (not "int") to str</code></pre>
+            <p class="text-lg text-gray-800 leading-relaxed mt-2">
+                Python: “Oh, you wanted to do math? Too bad! I thought you were trying to write a weird sentence.”
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-700 mt-6">Logical Errors: Bugs in Logic</h3>
+            <p class="text-lg text-gray-800 leading-relaxed mt-2">
+                Now, here’s where things get tricky. Logical errors don’t crash your program. They don’t throw an error message. Instead, they quietly sit there, producing the wrong results.
+            </p>
+
+            <pre class="bg-gray-900 text-white p-4 rounded-md mt-4"><code>def is_even(n):
+    return n % 2 == 1  # Incorrect logic: should be n % 2 == 0</code></pre>
+
+            <p class="text-lg text-gray-800 leading-relaxed mt-2">
+                Expected output: True for even numbers, False for odd numbers.<br>
+                Actual output: Exactly the opposite.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-teal-600 mt-6">Meme Representation</h2>
+            <p class="text-lg text-gray-800 leading-relaxed mt-2">
+                Here is my favorite meme to represent a logical error. Yes, the cow is running!
+            </p>
+            <div class="mt-4">
+                <img src="/img/cow-walking.gif" alt="Cow running meme" class="w-full max-w-md mx-auto rounded-lg shadow-md">
+            </div>
+
+            <h2 class="text-2xl font-semibold text-teal-600 mt-6">Moral of the Story</h2>
+            <p class="text-lg text-gray-800 leading-relaxed mt-2">
+                AI is an amazing tool, but it’s not a substitute for understanding your own code.
+            </p>
+        </article>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <script>
+        async function loadComponent(id, file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error("Failed to load " + file);
+                const html = await response.text();
+                document.getElementById(id).innerHTML = html;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    
+        // Load header and footer
+        loadComponent("header", "header.html");
+        loadComponent("footer", "footer.html");
+    </script>
+
+</body>
+</html>

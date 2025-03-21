@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling in Love with My PhD Project - Nisha Paudel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-slate-900">
+
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <main class="container mx-auto px-6 py-12">
+        <article class="max-w-3xl mx-auto bg-white p-6 shadow-lg rounded-lg">
+            <h1 class="text-4xl font-bold text-teal-600">Falling in Love with My PhD Project</h1>
+            <p class="text-sm text-gray-500 mt-2">Published on March 18, 2024 | By Nisha Paudel</p>
+            <img src="/img/australia.jpg" alt="PhD Journey" class="w-full my-6 rounded-lg shadow-md">
+
+            <p class="text-lg text-gray-800 leading-relaxed">
+                My journey into academia started in the breathtaking mountains of Nepal. Growing up surrounded by nature's beauty, I developed a deep curiosity about the world and a passion for scientific research.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-teal-600 mt-6">From Nepal to Australia</h2>
+            <p class="text-lg text-gray-800 leading-relaxed">
+                Moving to Australia for my PhD was both exciting and challenging. The transition from the serene landscapes of Nepal to the bustling research environment of an international university was a transformative experience.
+            </p>
+
+            <blockquote class="mt-6 border-l-4 border-teal-500 pl-4 italic text-gray-700">
+                "Every challenge I faced only deepened my love for my research." – Nisha Paudel
+            </blockquote>
+
+            <h2 class="text-2xl font-semibold text-teal-600 mt-6">The Beauty of Research</h2>
+            <p class="text-lg text-gray-800 leading-relaxed">
+                Research is not just about finding answers; it’s about asking the right questions. Through my work, I’ve had the chance to contribute to scientific discoveries while growing as an individual.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-teal-600 mt-6">Lessons Learned</h2>
+            <ul class="list-disc list-inside text-gray-800 mt-4 space-y-2">
+                <li>Resilience is key in academic research.</li>
+                <li>Collaboration enhances scientific discovery.</li>
+                <li>Passion fuels perseverance.</li>
+                <li>Every setback is a lesson in disguise.</li>
+            </ul>
+
+            <p class="text-lg text-gray-800 leading-relaxed mt-6">
+                My PhD journey has been an adventure filled with learning, challenges, and personal growth. Through this experience, I have truly fallen in love with the process of discovery.
+            </p>
+        </article>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <script>
+        async function loadComponent(id, file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error("Failed to load " + file);
+                const html = await response.text();
+                document.getElementById(id).innerHTML = html;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Load header and footer
+        loadComponent("header", "header.html");
+        loadComponent("footer", "footer.html");
+    </script>
+
+</body>
+</html>

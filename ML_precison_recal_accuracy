@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Precision, Recall, and Specificity</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    img {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <p><em>Published on: May 10, 2025</em></p>
+  <h1>🎣 Understanding Precision, Recall, and Specificity — A Fishing Pond Analogy</h1>
+
+  <p>When evaluating classification models in data science or machine learning, it’s crucial to understand performance metrics like <strong>precision</strong>, <strong>recall</strong>, and <strong>specificity</strong>. Let's break these down using a simple analogy involving a pond, a fisherman, and a bunch of fish — and even a few crabs!</p>
+
+  <h2>📊 The Scenario:</h2>
+  <p>Imagine a pond with:</p>
+  <ul>
+    <li><strong>100 fish</strong> (representing positive cases, like spam emails),</li>
+    <li><strong>100 non-fish</strong> (representing negative cases, like normal emails),</li>
+    <li>You cast your net and <strong>catch 80 items</strong> in total.</li>
+  </ul>
+  <p>Out of the 80 items you caught:</p>
+  <ul>
+    <li><strong>70 are fish</strong></li>
+    <li><strong>10 are not fish</strong> (false positives — maybe some crabs!)</li>
+    <li>You missed <strong>30 fish</strong> still swimming in the pond</li>
+    <li>You <strong>correctly avoided 90 non-fish</strong></li>
+  </ul>
+
+  <img src="A_colorful_2D_digital_illustration_educational_inf.png" alt="Fishing Pond Metrics Illustration">
+
+  <h2>🧲 The Calculations:</h2>
+
+  <h3>✅ Precision</h3>
+  <p><strong>Definition:</strong> Of all the items you caught, how many were actually fish?</p>
+  <p><strong>Formula:</strong> <code>Precision = TP / (TP + FP) = 70 / (70 + 10) = 87.5%</code></p>
+
+  <h3>📈 Recall / Sensitivity</h3>
+  <p><strong>Definition:</strong> Of all the fish in the pond, how many did you catch?</p>
+  <p><strong>Formula:</strong> <code>Recall = TP / (TP + FN) = 70 / (70 + 30) = 70%</code></p>
+
+  <h3>🔍 Specificity</h3>
+  <p><strong>Definition:</strong> Of all the non-fish, how many did you correctly avoid?</p>
+  <p><strong>Formula:</strong> <code>Specificity = TN / (TN + FP) = 90 / (90 + 10) = 90%</code></p>
+
+  <h2>🧠 Summary</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Value</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Precision</td>
+        <td>87.5%</td>
+        <td>When you said "fish", you were right 87.5% of the time</td>
+      </tr>
+      <tr>
+        <td>Recall</td>
+        <td>70%</td>
+        <td>You found 70% of all the actual fish in the pond</td>
+      </tr>
+      <tr>
+        <td>Specificity</td>
+        <td>90%</td>
+        <td>You correctly ignored 90% of the non-fish (like crabs!)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>🎯 Final Thought</h2>
+  <p>Understanding these metrics helps you tailor your model evaluation to the task at hand:</p>
+  <ul>
+    <li>Want to <strong>minimize false alarms</strong>? Focus on <strong>Precision</strong>.</li>
+    <li>Want to <strong>catch as many positives</strong> as possible? Focus on <strong>Recall</strong>.</li>
+    <li>Need to <strong>safeguard negatives</strong>? Pay attention to <strong>Specificity</strong>.</li>
+  </ul>
+
+  <p>Happy fishing — and modeling! 🎣📊</p>
+</body>
+</html>

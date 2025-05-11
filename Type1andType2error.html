@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Type I and Type II Errors</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      background: #fdfdfd;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 20px auto;
+    }
+    .quote {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-left: 4px solid #999;
+      margin: 20px 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Understanding Type I and Type II Errors (with Simple Example)</h1>
+  <p><em>Published on: May 10, 2025</em></p>
+
+  <p>In statistics, we often want to know whether something is true — for example, whether there are fish in a pond. To do this, we use <strong>hypothesis testing</strong>. But our conclusions are based on samples, not certainty, which means we can make mistakes. These mistakes are known as <strong>Type I</strong> and <strong>Type II</strong> errors.</p>
+
+  <h2>Setting Up the Hypotheses</h2>
+  <p>
+    Let's say you're testing whether there are fish in a pond. You set up your hypotheses as:
+    <ul>
+      <li><strong>Null Hypothesis (H₀):</strong> There are no fish in the pond.</li>
+      <li><strong>Alternative Hypothesis (H₁):</strong> There are fish in the pond.</li>
+    </ul>
+  </p>
+
+  <p>You then fish for a while and base your conclusion on whether or not you catch something, and the probability of catching something if there were really no fish (this is the <strong>p-value</strong>).</p>
+
+  <h2>Numerical Example: Making a Decision</h2>
+  <p>Imagine you cast a net into the pond for 10 minutes:</p>
+  <ul>
+    <li><strong>Case A:</strong> You catch 1 fish. A statistical test gives a p-value = 0.01</li>
+    <li>Since 0.01 < α = 0.05 (5% significance level), you <strong>reject H₀</strong>. You conclude: "There are fish in the pond." ✅</li>
+  </ul>
+
+  <p><strong>Case B:</strong> You catch nothing. Your test gives a p-value = 0.20</p>
+  <ul>
+    <li>Since 0.20 > 0.05, you <strong>fail to reject H₀</strong>. You conclude: "There’s not enough evidence that fish are in the pond." ❌ (but there might still be fish!)</li>
+  </ul>
+
+  <h2>Visualizing with a Confusion Matrix</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Fish Really Exist (H₁ True)</th>
+        <th>No Fish Exist (H₀ True)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>We Say: "Fish Exist"<br>(Reject H₀)</th>
+        <td>✅ <strong>True Positive:</strong> We caught a fish and we're correct</td>
+        <td>❌ <strong>Type I Error:</strong> We thought we caught a fish, but it was a crab (false positive)</td>
+      </tr>
+      <tr>
+        <th>We Say: "No Fish"<br>(Fail to Reject H₀)</th>
+        <td>❌ <strong>Type II Error:</strong> There were fish but we didn’t catch any (false negative)</td>
+        <td>✅ <strong>True Negative:</strong> We didn’t catch anything because the pond really has no fish</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Type I Error (False Positive)</h2>
+  <p>Occurs when we reject the null hypothesis even though it’s actually true. In our example, that’s saying “There are fish” when there aren’t. You caught a crab and mistook it for a fish.</p>
+  <div class="quote">Type I Error = Catching a crab, thinking it’s a fish.</div>
+
+  <h2>Type II Error (False Negative)</h2>
+  <p>Occurs when we fail to reject the null hypothesis even though the alternative is true. That means there were fish, but you didn’t catch any and concluded the pond is empty.</p>
+  <div class="quote">Type II Error = There are fish, but we missed them.</div>
+
+  <h2>How to Reduce These Errors</h2>
+  <ul>
+    <li><strong>Lower Type I Error:</strong> Use a smaller significance level (e.g., 0.01 instead of 0.05). Be more strict before saying fish exist.</li>
+    <li><strong>Lower Type II Error:</strong> Increase fishing effort (larger sample size). The more time you spend fishing, the more likely you’ll detect a real fish.</li>
+  </ul>
+
+  <h2>Confidence Intervals</h2>
+  <p>Another way to decide is using confidence intervals (CIs). If the 95% CI for the number of fish excludes 0, we reject H₀. If it includes 0, we cannot say fish exist.</p>
+  <ul>
+    <li>CI = (2, 5) → no 0 in range → <strong>Reject H₀</strong></li>
+    <li>CI = (-1, 3) → 0 is inside → <strong>Fail to reject H₀</strong></li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Type I and Type II errors help us understand the risks of wrong conclusions in hypothesis testing. Using examples like fishing makes it easier to visualize the logic. Always consider both types of error and use good design (like adequate sample size) for reliable decisions.</p>
+</body>
+</html>

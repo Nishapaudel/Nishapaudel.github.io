@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motherhood and PhD | Nisha Paudel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-900">
+    <div id="header"></div>
+
+    <main class="container mx-auto px-6 py-12">
+        <article class="mx-auto max-w-3xl rounded-lg bg-white p-6 shadow-lg">
+            <header class="mb-6">
+                <h1 class="text-4xl font-bold text-teal-600">Motherhood and PhD</h1>
+                <p class="mt-2 text-sm text-gray-600">
+                    By Nisha Paudel · <time datetime="2026-11-17">17 November 2026</time>
+                </p>
+            </header>
+
+            <div class="space-y-4 text-lg leading-relaxed text-gray-800">
+                <p>
+                    I became a mother during my PhD. Being a mother has its pros and cons.
+                    Becoming a mother at any stage of life is a challenge, but it’s a beautiful
+                    challenge. My mental health would have suffered without the support of my
+                    supervisors and the team I work with.
+                </p>
+
+                <p>
+                    My PhD is my baby too. Research is my passion, and it’s what I’d love to
+                    do for the rest of my life. That’s the professional part of my life. On the
+                    personal side, I love babies. I’d been thinking about becoming a mother for
+                    a couple of years, especially when I was working in a nursing home caring
+                    for older people.
+                </p>
+
+                <p>
+                    My supervisor is an amazing person. Every time I talk to her, she has
+                    something positive to say. I feel so empowered and motivated after
+                    meeting with her.
+                </p>
+
+                <p>
+                    My daughter is magical. Every time I see her, all my stress vanishes.
+                    Cuddling and playing with her leaves me feeling refreshed. Life has
+                    become so busy that I don’t have time to stress about problems that
+                    might come up in the future.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        async function loadComponent(id, file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${file}`);
+                }
+                document.getElementById(id).innerHTML = await response.text();
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        loadComponent("header", "header.html");
+        loadComponent("footer", "footer.html");
+    </script>
+</body>
+</html>
